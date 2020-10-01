@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Todo extends Model
 {
     use Filterable;
+
     protected $fillable = [
         'id',
         'name',
@@ -24,4 +25,12 @@ class Todo extends Model
     protected $hidden = [
         'deleted_at'
     ];
+
+
+
+
+    public function assigned_user()
+    {
+        return $this->belongsTo('App\User', 'assigned_to', 'id')->select(['id', 'name', 'email']);
+    }
 }

@@ -19,3 +19,4 @@ use Illuminate\Http\Request;
 
 Route::get('todo/', 'TodoController@index');
 Route::post('todo/', 'TodoController@store');
+Route::get('user/todo', 'TodoController@users_todo');
